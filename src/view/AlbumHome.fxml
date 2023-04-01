@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.AlbumHomeController">
+   <children>
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#goBack" text="Back" />
+      <ListView fx:id="photoList" layoutX="256.0" layoutY="40.0" prefHeight="351.0" prefWidth="233.0" />
+      <AnchorPane fx:id="addPhotoAnchor" layoutX="502.0" layoutY="45.0" prefHeight="90.0" prefWidth="233.0">
+         <children>
+            <Text fx:id="selectedFileText" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SelectedFile" />
+            <Button fx:id="addPhotoButton" layoutX="-2.0" layoutY="67.0" mnemonicParsing="false" onAction="#addPhoto" text="Add Photo to Album" />
+            <TextField fx:id="captionField" layoutY="40.0" promptText="Enter Caption and Add" />
+         </children>
+      </AnchorPane>
+      <Button fx:id="selectPhotoBtn" layoutX="592.0" layoutY="21.0" mnemonicParsing="false" onAction="#selectPhoto" text="Add A Photo" />
+      <AnchorPane fx:id="actionButtons" layoutX="25.0" layoutY="75.0" prefHeight="129.0" prefWidth="205.0">
+         <children>
+            <Button fx:id="photoDisplayBtn" layoutX="28.0" layoutY="1.0" mnemonicParsing="false" onAction="#openPhotoDisplay" text="OPEN PHOTO DISPLAY" />
+            <Button fx:id="deletePhotoBtn" layoutX="28.0" layoutY="65.0" mnemonicParsing="false" onAction="#deletePhoto" prefHeight="27.0" prefWidth="150.0" text="Delete Selected Photo" />
+            <Button fx:id="copyMoveButton" layoutX="19.0" layoutY="94.0" mnemonicParsing="false" onAction="#copyOrMove" text="Copy/Move Selected Photo" />
+            <Button fx:id="addTagBtn" layoutX="14.0" layoutY="38.0" mnemonicParsing="false" onAction="#showTagPane" text="Add Tags to Selected Photo" />
+         </children>
+      </AnchorPane>
+      <Text fx:id="photoListTitle" layoutX="298.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Photos in Album">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Text>
+      <AnchorPane fx:id="copyMoveAnchor" layoutX="37.0" layoutY="216.0" prefHeight="94.0" prefWidth="206.0">
+         <children>
+          <Button fx:id="copyButton" layoutX="45.0" layoutY="55.0" mnemonicParsing="false" onAction="#copy" text="Copy" />
+            <Text fx:id="movePrompt" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select a target album to copy/move to" />
+            <Button fx:id="moveButton" layoutX="103.0" layoutY="55.0" mnemonicParsing="false" onAction="#move" text="Move" />
+            <ChoiceBox fx:id="targetList" layoutX="29.0" layoutY="22.0" prefWidth="150.0" />
+         </children>
+      </AnchorPane>
+      <ButtonBar fx:id="recaptionPane" layoutX="194.0" layoutY="401.0" prefHeight="27.0" prefWidth="292.0">
+         <buttons>
+            <Button fx:id="reCaption" mnemonicParsing="false" onAction="#reCaption" prefHeight="27.0" text="Re-Caption" />
+            <TextField fx:id="capField" promptText="Enter New Caption" />
+         </buttons>
+      </ButtonBar>
+      <AnchorPane fx:id="tagPane" layoutX="502.0" layoutY="151.0" prefHeight="251.0" prefWidth="292.0">
+         <children>
+            <Button fx:id="addTag" layoutX="173.0" layoutY="21.0" mnemonicParsing="false" onAction="#addTags" text="Add Tags" />
+            <TextField fx:id="tagEntered" layoutY="34.0" prefHeight="25.0" prefWidth="173.0" promptText="Enter Tag Value" />
+            <Button fx:id="deleteTag" layoutX="87.0" layoutY="221.0" mnemonicParsing="false" onAction="#deleteTags" text="Delete Selected Tag" />
+            <ListView fx:id="tags" layoutY="60.0" prefHeight="161.0" prefWidth="292.0" />
+            <TextField fx:id="tagType" layoutY="7.0" prefHeight="25.0" prefWidth="173.0" promptText="Enter Tag Name" />
+         </children>
+      </AnchorPane>
+      <Button fx:id="quit" layoutX="66.0" layoutY="14.0" mnemonicParsing="false" onAction="#quit" prefHeight="25.0" prefWidth="41.0" text="Quit" />
+   </children>
+</AnchorPane>

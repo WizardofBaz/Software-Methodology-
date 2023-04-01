@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.PhotoDisplayController">
+   <children>
+      <ImageView fx:id="displayedPhoto" fitHeight="300.0" fitWidth="300.0" layoutX="14.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true" />
+      <ButtonBar layoutY="346.0" prefHeight="40.0" prefWidth="232.0">
+        <buttons>
+            <Button fx:id="prevPhotoBtn" mnemonicParsing="false" onAction="#switchPhoto" text="Previous Photo" />
+          <Button fx:id="nextPhotoBtn" mnemonicParsing="false" onAction="#switchPhoto" text="Next Photo" />
+        </buttons>
+      </ButtonBar>
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#goBack" text="Back" />
+      <Text fx:id="photoName" layoutX="314.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Photo Name" />
+      <Text fx:id="photoDate" layoutX="314.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Taken" />
+      <ListView fx:id="tags" layoutX="314.0" layoutY="121.0" prefHeight="241.0" prefWidth="202.0" />
+      <Text layoutX="314.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tags" />
+      <Button fx:id="quit" layoutX="64.0" layoutY="14.0" mnemonicParsing="false" onAction="#quit" prefHeight="25.0" prefWidth="41.0" text="Quit" />
+   </children>
+</AnchorPane>

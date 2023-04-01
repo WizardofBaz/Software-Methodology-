@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.SearchTags">
+   <children>
+      <Button fx:id="searchByDateBtn" layoutX="489.0" layoutY="56.0" mnemonicParsing="false" onAction="#findByTag" text="Search By Tags" />
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#goBack" text="Back" />
+      <AnchorPane fx:id="searchResultsAnchor" layoutX="37.0" layoutY="102.0" prefHeight="284.0" prefWidth="722.0">
+         <children>
+            <HBox layoutY="17.0" prefHeight="267.0" prefWidth="498.0">
+               <children>
+                  <ListView fx:id="searchResultsList" prefHeight="267.0" prefWidth="184.0" />
+                  <ListView fx:id="photoDetailsList" prefHeight="267.0" prefWidth="191.0" />
+                  <ImageView fx:id="photo" fitHeight="267.0" fitWidth="171.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </HBox>
+            <Text layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search Results" />
+            <Button fx:id="makeAlbum" layoutX="541.0" layoutY="33.0" mnemonicParsing="false" onAction="#createPrompt" text="Create Album From Search Results" />
+            <VBox fx:id="prompt" layoutX="541.0" layoutY="60.0">
+               <children>
+                  <TextField fx:id="newAlbumName" promptText="Enter Name for Album" />
+                  <Button fx:id="createAlbum" mnemonicParsing="false" onAction="#create" text="Create" />
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <TextField fx:id="tagTypeField" layoutX="82.0" layoutY="41.0" promptText="Tag Type" />
+      <TextField fx:id="tagValueField" layoutX="82.0" layoutY="69.0" promptText="Tag Value" />
+      <Button fx:id="orButton" layoutX="266.0" layoutY="69.0" mnemonicParsing="false" onAction="#orClicked" text="OR" />
+      <Button fx:id="andButton" layoutX="262.0" layoutY="41.0" mnemonicParsing="false" onAction="#andClicked" text="AND" />
+      <AnchorPane fx:id="secondPair" layoutX="320.0" layoutY="42.0">
+         <children>
+            <TextField fx:id="tagType2Field" promptText="Tag Type 2" />
+            <TextField fx:id="tagValue2Field" layoutY="28.0" promptText="Value Type 2" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
